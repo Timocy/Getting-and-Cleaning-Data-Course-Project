@@ -4,38 +4,38 @@ Features and applied workflows for this dataset is described below.
 ## Work flow
 1. Download the data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 2. Unzip the downloaded file.
-3. Create separate data.frames for train, test, features, and activity labels from unzipped files.
-   train_x : "/train/X_train.txt"
-   train_y : "/train/y_train.txt"
-   train_subject : "/train/subject_train.txt"
-   test_x : "/test/X_test.txt"
-   test_y : "/test/y_test.txt"
-   test_subject : "/test/subject_test.txt"
-   features : "/features.txt"
-   activity_labels : "/activity_labels.txt"
+3. Create separate data.frames for train, test, features, and activity labels from unzipped files.  
+   train_x : "/train/X_train.txt"  
+   train_y : "/train/y_train.txt"  
+   train_subject : "/train/subject_train.txt"  
+   test_x : "/test/X_test.txt"  
+   test_y : "/test/y_test.txt"  
+   test_subject : "/test/subject_test.txt"  
+   features : "/features.txt"  
+   activity_labels : "/activity_labels.txt"  
 4. Change column names of the created data.frames.
-   train_x, test_x : Second column of 'features' data.frame.
-   train_y, test_y : "activityID"
-   train_subject, test_subject : "subjectID"
-   activity_labels : "activityID", "activityType"
+   train_x, test_x : Second column of 'features' data.frame.  
+   train_y, test_y : "activityID"  
+   train_subject, test_subject : "subjectID"  
+   activity_labels : "activityID", "activityType"  
 5. Merge data.frames
-   train_merge : merging train_y, train_subject, train_x
-   test_merge : merging test_y, test_subject, test_x
-   all_merge : merging train_merge and test_merge
+   train_merge : merging train_y, train_subject, train_x  
+   test_merge : merging test_y, test_subject, test_x  
+   all_merge : merging train_merge and test_merge  
 6. Feature extraction
-   mean_std : A vector of columns including activityID, subjectID, and all columns with 'mean' and 'std'.
-   mean_std_merge_set : Subset of 'all_merge' with columns included in 'mean_std'.
+   mean_std : A vector of columns including activityID, subjectID, and all columns with 'mean' and 'std'.  
+   mean_std_merge_set : Subset of 'all_merge' with columns included in 'mean_std'.  
 7. Aggregate the subset
-   tidy_set : An aggregated set of mean_std_merge_set by subjectID and activityID
+   tidy_set : An aggregated set of mean_std_merge_set by subjectID and activityID  
 8. Activity labeling
-   final_tidy_set : Merging tidy_set and activityLables by activityID.
+   final_tidy_set : Merging tidy_set and activityLables by activityID.  
 9. Export the result as a file
-   UCI HAR Dataset final_tidy_set.txt
+   UCI HAR Dataset final_tidy_set.txt  
    
 ## Feature description
 ### Key values
-activityID : Identifier for activity.
-subjectID : Identifier for subject.
+activityID : Identifier for activity.  
+subjectID : Identifier for subject.  
 
 ### Measurement
 [3] "tBodyAcc-mean()-X"               "tBodyAcc-mean()-Y"              
@@ -80,11 +80,11 @@ subjectID : Identifier for subject.
 [81] "fBodyBodyGyroJerkMag-meanFreq()
 
 ### Activity label (activityType)
-activityType=1  :  WALKING  (subject was walking during the test)
-activityType=2  :  WALKING_UPSTAIRS (subject was walking up a staircase during the test)
-activityType=3  :  WALKING_DOWNSTAIRS (subject was walking down a staircase during the test)
-activityType=4  :  SITTING (subject was sitting during the test)
-activityType=5  :  STANDING (subject was standing during the test)
-activityType=6  :  LAYING (subject was laying down during the test)
+activityType=1  :  WALKING  (subject was walking during the test)  
+activityType=2  :  WALKING_UPSTAIRS (subject was walking up a staircase during the test)  
+activityType=3  :  WALKING_DOWNSTAIRS (subject was walking down a staircase during the test)  
+activityType=4  :  SITTING (subject was sitting during the test)  
+activityType=5  :  STANDING (subject was standing during the test)  
+activityType=6  :  LAYING (subject was laying down during the test)  
 
 
