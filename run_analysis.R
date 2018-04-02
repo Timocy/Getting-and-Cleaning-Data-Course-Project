@@ -19,9 +19,9 @@ train_subject <- read.table(file.path(datalocation, "train", "subject_train.txt"
 print("Training data load completed")
 
 ### Reading test sets
-test_x <- read.table(file.path(datalocation, "train", "X_train.txt"), header=FALSE)
-test_y <- read.table(file.path(datalocation, "train", "y_train.txt"), header=FALSE)
-test_subject <- read.table(file.path(datalocation, "train", "subject_train.txt"), header=FALSE)
+test_x <- read.table(file.path(datalocation, "test", "X_test.txt"), header=FALSE)
+test_y <- read.table(file.path(datalocation, "test", "y_test.txt"), header=FALSE)
+test_subject <- read.table(file.path(datalocation, "test", "subject_test.txt"), header=FALSE)
 print("Test data load completed")
 
 ### Reading features.txt
